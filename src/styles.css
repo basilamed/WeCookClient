@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-/* logo orange #ef4229*/
+/* logo orange #ef4229
+   dark blue #2F4858
+   lighter blue #3A517B
+   purple #6C4F91
+   dark pink #AA408A
+   bright pink #DC2C66
+*/
+
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@200..900";
+
+body{
+    font-family: 'Montserrat', serif;
+}
+

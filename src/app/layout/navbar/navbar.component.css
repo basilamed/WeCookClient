@@ -1,13 +1,16 @@
 nav {
-    height: 65px;
+    height: 55px;
     width: 100%;
 }
 
 .site-logo {
-    padding: 10px 20px;
+    padding: 7px 20px;
 }
 
 img{
-    height: 55px;
+    height: 35px;
     margin:auto;
+}
+h6{
+    color: #ef4229;
 }

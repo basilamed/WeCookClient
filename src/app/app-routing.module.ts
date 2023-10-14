@@ -7,7 +7,11 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 
 const routes: Routes = [
-  { path : "", component: WelcomeComponent}
+  { path : "", component: WelcomeComponent},
+  { path : "login", component: LoginComponent},
+  { path : "register", component: RegisterComponent},
+
+  
 ];
 
 @NgModule({

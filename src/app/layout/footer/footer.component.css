@@ -1,0 +1,16 @@
+footer {
+    height: 130px;
+    padding: 15px;
+    width: 100%;
+    background-color: #2F4858;
+    color: white;
+    margin-top: auto;
+    text-transform: uppercase;
+    font-size: 18px;
+    
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white;
+}
