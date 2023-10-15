@@ -1,0 +1,77 @@
+.container {
+    padding: 16px;
+  } 
+  
+  form {
+    border: 3px solid #2F4858;
+    width: 40%;
+    margin:auto;
+    margin-top: 40px;
+    margin-bottom: 40px ;
+  }
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  .registerbtn {
+    background-color: #c09d63;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 1;
+  }
+  
+  .registerbtn:hover {
+    opacity:0.9;
+  }
+  
+  a{
+    text-decoration: none;
+    color: #3A517B;
+  }
+  a:hover{
+    color: #2F4858;
+  }
+  
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: #eeeeee;
+    color: #ee3114
+  }
+
+  .pass-info{
+    color: #ef4229;
+    font-size: x-small;
+    text-align: right;
+  }
+
+  button {
+    background-color: #ef4229;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #ee3114
+  }
