@@ -12,3 +12,7 @@ a:hover{
     transform: scale(1.05);
     color: rgb(237, 237, 237);
 }
+.white-icon {
+    color: white;
+  }
+  

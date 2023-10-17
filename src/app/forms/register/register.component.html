@@ -6,23 +6,23 @@
         <p>Please fill in this form to create an account.</p>
         <div *ngIf="error" class="alert ">Email already registered!</div>
     </div>
-    <label for="fname"><b>First name</b></label>
+    <label for="FirstName"><b>First name</b></label>
     <input formControlName="fname" id="fname" type="text" placeholder="Enter your first name">
-    <div *ngIf="Fname?.touched && Fname?.invalid">
-        <div *ngIf="Fname?.errors?.['required']" class="alert ">First name is required</div>
-        <div *ngIf="Fname?.errors?.['minlength']" class="alert ">First name must be at least 3 characters</div>
-        <div class="alert " *ngIf="Fname?.errors?.['fname']">Not good</div>
-        <div class="alert " *ngIf="Fname?.errors?.['cannotContaintSpace']">Can not contain spaces</div>
+    <div *ngIf="FirstName?.touched && FirstName?.invalid">
+        <div *ngIf="FirstName?.errors?.['required']" class="alert ">First name is required</div>
+        <div *ngIf="FirstName?.errors?.['minlength']" class="alert ">First name must be at least 3 characters</div>
+        <div class="alert " *ngIf="FirstName?.errors?.['FirstName']">Not good</div>
+        <div class="alert " *ngIf="FirstName?.errors?.['cannotContaintSpace']">Can not contain spaces</div>
     </div>
     <br>
     <br>
-    <label for="lname"><b>Last name</b></label>
+    <label for="LastName"><b>Last name</b></label>
     <input formControlName="lname" id="lname" type="text" placeholder="Enter your last name">
-    <div *ngIf="Lname?.touched && Lname?.invalid">
-        <div *ngIf="Lname?.errors?.['required']" class="alert ">Last name is required</div>
-        <div *ngIf="Lname?.errors?.['minlength']" class="alert ">Last name must be at least 3 characters</div>
-        <div class="alert " *ngIf="Lname?.errors?.['lname']">Not good</div>
-        <div class="alert " *ngIf="Lname?.errors?.['cannotContaintSpace']">Can not contain spaces</div>
+    <div *ngIf="LastName?.touched && LastName?.invalid">
+        <div *ngIf="LastName?.errors?.['required']" class="alert ">Last name is required</div>
+        <div *ngIf="LastName?.errors?.['minlength']" class="alert ">Last name must be at least 3 characters</div>
+        <div class="alert " *ngIf="LastName?.errors?.['LastName']">Not good</div>
+        <div class="alert " *ngIf="LastName?.errors?.['cannotContaintSpace']">Can not contain spaces</div>
     </div>
     <br>
     <br>
@@ -68,7 +68,7 @@
 </div>
 <br>
 <!--<p class="pass-info">By registering you agree to our <a routerLink="/terms">TERMS AND CONDITIONS</a></p>-->
-      <button type="submit">Register</button>
+      <button type="submit" [disabled]="!form.valid" (click)="register()">Register</button>
       <div class="container" >
     <span> <a routerLink="/login" routerLinkActive="active">Already have an account?</a></span>
     </div>
