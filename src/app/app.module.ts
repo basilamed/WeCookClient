@@ -21,6 +21,11 @@ import { MainComponent } from './pages/main/main.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { NavigationComponent } from './layout/navigation/navigation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddRecipeComponent } from './forms/add-recipe/add-recipe.component';
+import { SingleRecipeComponent } from './pages/single-recipe/single-recipe.component';
+import { FavouritesComponent } from './pages/favourites/favourites.component';
+import { ApproveUsersComponent } from './pages/approve-users/approve-users.component';
+import { UpdateUserComponent } from './forms/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegisterComponent,
     MainComponent,
     WelcomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    AddRecipeComponent,
+    SingleRecipeComponent,
+    FavouritesComponent,
+    ApproveUsersComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
