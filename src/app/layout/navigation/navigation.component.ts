@@ -11,6 +11,7 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 export class NavigationComponent implements OnInit{
 
   user: any = [];
+  id = 0;
   public currentUserSubscription!: Subscription; // Promenjeno private u public
   private currentUserSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   constructor(public userService:UserService, public router: Router,  private cdr: ChangeDetectorRef) {}
@@ -41,6 +42,10 @@ export class NavigationComponent implements OnInit{
 
   logout(){
     this.userService.logout();
+  }
+  addRecipe(){
+    this.id = this.user.id
+    this.router.navigate([`/add-recipe/${this.id}` ])
   }
 
 }

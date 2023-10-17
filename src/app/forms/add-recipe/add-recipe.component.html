@@ -1,1 +1,63 @@
-<p>add-recipe works!</p>
+<form [formGroup]="form">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="text-theme-primary">Recipe Form</h2>
+        <p>Please enter the recipe information</p>
+      </div>
+      
+      <label for="title"><b>Title</b></label>
+      <input formControlName="title" id="title" type="text" placeholder="Enter the recipe title">
+      <div *ngIf="Title?.touched && Title?.invalid">
+        <div *ngIf="Title?.errors?.['required']" class="alert">Title is required</div>
+      </div>
+      <br>
+      
+      <label for="ingredients"><b>Ingredients</b></label>
+      <input formControlName="ingredients" id="ingredients" type="text" placeholder="Enter the ingredients with commas inbetween">
+      <div *ngIf="Ingredients?.touched && Ingredients?.invalid">
+        <div *ngIf="Ingredients?.errors?.['required']" class="alert">Ingredients are required</div>
+      </div>
+      <br>
+      
+      <label for="instructions"><b>Instructions</b></label>
+      <input formControlName="instructions" id="instructions" type="text" placeholder="Enter the instructions">
+      <div *ngIf="Instructions?.touched && Instructions?.invalid">
+        <div *ngIf="Instructions?.errors?.['required']" class="alert">Instructions are required</div>
+      </div>
+      <br>
+      
+      <label for="preparationTime"><b>Preparation Time</b></label>
+      <input formControlName="preporationTime" id="preparationTime" type="text" placeholder="Enter preparation time">
+      <div *ngIf="PreporationTime?.touched && PreporationTime?.invalid">
+        <div *ngIf="PreporationTime?.errors?.['required']" class="alert">Preparation time is required</div>
+      </div>
+      <br>
+
+      <label for="temperature"><b>Temperature</b></label>
+      <input formControlName="temperature" id="temperature" type="text" placeholder="Enter baking temperature, for no bake enter 0">
+      <div *ngIf="Temperature?.touched && Temperature?.invalid">
+        <div *ngIf="Temperature?.errors?.['required']" class="alert">Temperature is required</div>
+      </div>
+      <br>
+      
+      <label for="image"><b>Image</b></label>
+      <input formControlName="image" type="file" accept="image/*" (change)="onImageSelected($event)" placeholder="Enter image URL">
+      <div *ngIf="Image?.touched && Image?.invalid">
+        <div *ngIf="Image?.errors?.['required']" class="alert">Image is required</div>
+      </div>
+      <br>
+      
+      <label for="taste"><b>Taste</b></label>
+      <select formControlName="taste" id="taste">
+        <option value="false">Savory</option>
+        <option value="true">Sweet</option>
+      </select>
+      
+      <div *ngIf="Taste?.touched && Taste?.invalid">
+        <div *ngIf="Taste?.errors?.['required']" class="alert">Taste is required</div>
+      </div>
+      
+      <button type="submit" [disabled]="!form.valid" (click)="submitRecipe()">Submit Recipe</button>
+    </div>
+  </form>
+  
