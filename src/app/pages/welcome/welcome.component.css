@@ -2,3 +2,61 @@
     width: 100%;
     height: auto;
 }
+#img{
+    height: 280px;
+    width: 480px;
+    border: 1px solid white;
+}
+.rectangle{
+    position: absolute;
+  top: 15px;
+  left: 15px; 
+  height: 250px;
+    width: 450px;
+  padding: 10px;
+  border: 2px solid white;
+  z-index: 1; 
+}
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+ .text {
+    padding: 25px;
+    color: #0f283c
+  }
+  #units{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+  }
+  #unit{
+    width: max-content;
+    margin: 20px;
+  }
+  h2, h5, h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+  span{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: gray
+  }
+  hr {
+    width: 70px; /* Adjust the width to make the line shorter */
+    background-color: black; /* Optional: Set the line color */
+    margin: 10px auto;
+}
+mat-card{
+    border: none;
+    box-shadow: none;
+}
+h5{
+    color: #ef4229;
+}

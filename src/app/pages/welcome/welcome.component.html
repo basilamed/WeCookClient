@@ -1,7 +1,32 @@
 <div class="home">
     <img src="assets/home1t.jpg" alt="picture of food" class="home-food">
      <div class="text">
-         <h1>Extending Compassion and Changing Lives</h1>
+         <h1>Check out the newest recipes</h1>
      </div>
+     <div class="row">
+        <div id="units">
+            <div *ngFor="let u of recipes">
+                <div>
+                <mat-card id="unit">
+                    <div class="image-container">
+                        <img [src]="u.image" id="img">
+                        <div class="rectangle"></div>
+                      </div>
+                    
+                    <br>
+                    <mat-card-content>
+                        <span>
+                            <p>{{ u.taste ? 'Sweet' : 'Savory' }}</p>
+                            <p>{{ u.preporationTime }}</p>
+                        </span>
+                        <h2>{{u.title}}</h2>
+                        <hr>
+                        <h5>BY {{u.chef.firstName}} {{ u.chef.lastName}}</h5>
+
+                    </mat-card-content>
+                </mat-card>
+                </div>
+            </div>
+        </div>
 
  </div>
