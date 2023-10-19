@@ -1,1 +1,44 @@
-<p>update-user works!</p>
+<div class="container">
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="text-center">
+          <br>
+          <h1 class="text-theme-primary">Edit profile</h1>
+          <p>Please fill in this form edit your profile</p>
+          <div class="alert alert-danger" *ngIf="error">Something went wrong</div>
+          <div class="alert alert-success" *ngIf="success">You have successfully updated your profile</div>
+        </div>
+      </div> 
+      <div class="image-cont">
+        <mat-icon *ngIf="!userService.hasImage()" aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon>
+        <img *ngIf="userService.hasImage()" src={{image}} alt="Profilna slika" class="round-image">
+    </div>
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input formControlName="name" type="text" class="form-control" id="name" placeholder="Enter your First name">
+            <div *ngIf="Name?.touched && Name?.invalid">
+              <p *ngIf="Name?.errors?.['required']" class="errors">Name is required</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="surname">Your Last Name</label>
+            <input formControlName="surname" type="text" class="form-control" id="surname" placeholder="Enter your Last name">
+            <div *ngIf="Surname?.touched && Surname?.invalid">
+              <p *ngIf="Surname?.errors?.['required']" class="errors">Name is required</p>
+            </div>
+          </div>
+      <div class="form-group">
+        <label for="image">Upload Image</label>
+        <input formControlName="image" type="file" accept="image/*" (change)="onImageSelected($event)" class="form-control" id="imageInput">
+        <div *ngIf="Image?.touched && Image?.invalid">
+          <p *ngIf="Image?.errors?.['required']" class="errors">Image is required</p>
+        </div>
+      </div>
+      <br>
+     <span>
+      <button (click)="updateUser()">Update Profile</button>
+      <button (click)="openConfirmationDialog()">Delete Profile</button>
+    </span>
+    
+    </form>
+    </div>

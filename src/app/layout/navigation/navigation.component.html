@@ -12,9 +12,11 @@
           
         <img *ngIf="userService.hasImage()" class="profile-image" [src]="user.image" alt="">
         
-        <button *ngIf="userService.isLogedIn()" mat-button [matMenuTriggerFor]="menu" class="menu" >{{user.firstName}} {{user.lastName}}</button>
+        <button *ngIf="userService.isLogedIn()" mat-button [matMenuTriggerFor]="menu" class="menu" id="ime" >{{user.firstName}} {{user.lastName}}</button>
          <mat-menu #menu="matMenu">
-             <span><button mat-menu-item routerLink="/" (click)="logout()">Logout</button></span>
+            <span><button  mat-menu-item (click)="openInfo(user.id)" routerLinkActive="active">Edit profile</button></span>
+            <span><button  mat-menu-item (click)="ChangePassword(user.id)" routerLinkActive="active">Change password</button></span>
+            <span><button mat-menu-item routerLink="/" (click)="logout()">Logout</button></span>
         </mat-menu>
         <button *ngIf="userService.isLogedIn()" mat-button [matMenuTriggerFor]="menu2" class="menu">
             <mat-icon class="white-icon">restaurant_menu</mat-icon>

@@ -26,6 +26,8 @@ import { SingleRecipeComponent } from './pages/single-recipe/single-recipe.compo
 import { FavouritesComponent } from './pages/favourites/favourites.component';
 import { ApproveUsersComponent } from './pages/approve-users/approve-users.component';
 import { UpdateUserComponent } from './forms/update-user/update-user.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ChangePasswordComponent } from './forms/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { UpdateUserComponent } from './forms/update-user/update-user.component';
     SingleRecipeComponent,
     FavouritesComponent,
     ApproveUsersComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    ConfirmationComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

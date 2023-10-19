@@ -1,0 +1,47 @@
+.recipe{
+    width: 100%;
+    height: 350px; /* Set the desired height here */
+    object-fit: cover;
+}
+
+.recipe-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px 40px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 7px auto 14px auto;
+}
+
+.recipe-details h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.recipe-image {
+    max-width: 100%;
+    height: auto;
+}
+
+span{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: gray
+  }
+  .info{
+    color: #ef4229;
+    text-transform: uppercase;
+  }
+  .home{
+    background-color: #f8f8f8d2;
+  }

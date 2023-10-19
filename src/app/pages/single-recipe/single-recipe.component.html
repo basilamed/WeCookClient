@@ -1,1 +1,24 @@
-<p>single-recipe works!</p>
+<div class="home">
+    <img [src]="recipe.image" alt="picture of food" class="recipe">
+    <div class="recipe-container">
+        <span>
+            <p>Posted on: {{recipe.postingDate | date: "dd/MM/YYYY"}}</p>
+            <p>By: {{recipe.chef.firstName}} {{recipe.chef.lastName}}</p>
+        </span>
+        <h1 class="recipe-title">{{ recipe.title }}</h1>
+        <span class="info">
+            <p>Preparation Time: {{ recipe.preporationTime }}</p>
+            <p>Taste: {{ recipe.taste ? 'Sweet' : 'Savory' }}</p>
+            <p>{{ recipe.temperature == 0 ? 'No Bake Recipe' : 'Baking Temperature: ' + recipe.temperature + '°C' }}</p>
+        </span>
+
+        <div class="recipe-details">
+            <h2>Ingredients:</h2>
+            <ul>
+                <li *ngFor="let ingredient of recipe.ingredients.split(','); let i = index">{{ ingredient.trim() }}</li>
+            </ul>
+            <h2>Instructions:</h2>
+            <p>{{ recipe.instructions }}</p>
+        </div>
+    </div>
+</div>

@@ -23,5 +23,8 @@ export class WelcomeComponent {
       console.log(this.recipes)
     })
   }
+  openInfo(id: number) {
+    this.router.navigate([`/recipe/${id}`]);
+  }
 
 }

@@ -6,7 +6,7 @@
      <div class="row">
         <div id="units">
             <div *ngFor="let u of recipes">
-                <div>
+                <div  (click)="openInfo(u.id)">
                 <mat-card id="unit">
                     <div class="image-container">
                         <img [src]="u.image" id="img">

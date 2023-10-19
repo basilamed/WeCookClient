@@ -9,7 +9,7 @@ import { SingleRecipeComponent } from './pages/single-recipe/single-recipe.compo
 import { UpdateUserComponent } from './forms/update-user/update-user.component';
 import { FavouritesComponent } from './pages/favourites/favourites.component';
 import { ApproveUsersComponent } from './pages/approve-users/approve-users.component';
-
+import { ChangePasswordComponent } from './forms/change-password/change-password.component';
 
 
 const routes: Routes = [
@@ -17,6 +17,11 @@ const routes: Routes = [
   { path : "login", component: LoginComponent},
   { path : "register", component: RegisterComponent},
   { path : "add-recipe/:id", component: AddRecipeComponent},
+  { path : "editUser/:id", component: UpdateUserComponent},
+  { path : "changePassword/:id", component: ChangePasswordComponent},
+  { path : "recipe/:id", component: SingleRecipeComponent},
+  
+
 
 ];
 

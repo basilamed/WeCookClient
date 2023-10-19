@@ -47,5 +47,11 @@ export class NavigationComponent implements OnInit{
     this.id = this.user.id
     this.router.navigate([`/add-recipe/${this.id}` ])
   }
+  openInfo(id: string){
+    this.router.navigate([`/editUser/${id}`])
+  }
+  ChangePassword(id: string){
+    this.router.navigate([`/changePassword/${id}`])
+  }
 
 }
