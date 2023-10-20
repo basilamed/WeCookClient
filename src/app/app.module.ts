@@ -28,6 +28,8 @@ import { ApproveUsersComponent } from './pages/approve-users/approve-users.compo
 import { UpdateUserComponent } from './forms/update-user/update-user.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ChangePasswordComponent } from './forms/change-password/change-password.component';
+import { NewCommentComponent } from './forms/new-comment/new-comment.component';
+import { RecipeCommentsComponent } from './composite/recipe-comments/recipe-comments.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { ChangePasswordComponent } from './forms/change-password/change-password
     ApproveUsersComponent,
     UpdateUserComponent,
     ConfirmationComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    NewCommentComponent,
+    RecipeCommentsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+<div class="add-comment">
+    <h2>Add a Comment</h2>
+    <form  [formGroup]="form">
+      <div class="form-group">
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="rating" formControlName="rating">
+        <div *ngIf="Rating?.touched && Rating?.invalid">
+            <div *ngIf="Rating?.errors?.['required']" class="alert ">Rating is required</div>
+            <div *ngIf="Rating?.errors?.['min']" class="alert ">Rating has to be a minimum of 1</div>
+            <div *ngIf="Rating?.errors?.['max']" class="alert ">Rating cannot exceed 5</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Comment:</label>
+        <textarea id="description" name="description" formControlName="description"></textarea>
+        <div *ngIf="Description?.touched && Description?.invalid">
+            <div *ngIf="Description?.errors?.['required']" class="alert ">Description is required</div>
+            <div *ngIf="Description?.errors?.['min']" class="alert ">Description has to be a minimum of 10 characters</div>
+            <div *ngIf="Description?.errors?.['max']" class="alert ">Description cannot exceed 150 characters</div>
+        </div>
+      </div>
+      <button type="submit" (click)="openConfirmationDialog()" [disabled]="form.invalid">Submit Comment</button>
+    </form>
+  </div>
+  

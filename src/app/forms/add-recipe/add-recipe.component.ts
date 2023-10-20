@@ -100,6 +100,7 @@ export class AddRecipeComponent {
       this.RecipeService.addRecipe(recipeDto).subscribe(
         (response) => {
           console.log('Recipe added successfully');
+          this.router.navigate([`/`]);
         },
         (error) => {
           console.error('Error adding recipe:', error);

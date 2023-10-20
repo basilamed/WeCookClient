@@ -20,5 +20,10 @@
             <h2>Instructions:</h2>
             <p>{{ recipe.instructions }}</p>
         </div>
+        <div class="comments">
+            <app-recipe-comments [recipe]="recipe" [user]="user"></app-recipe-comments>
+            <app-new-comment [recipe]="recipe" [user]="user"></app-new-comment>
+        </div>
     </div>
+   
 </div>
