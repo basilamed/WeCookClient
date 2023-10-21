@@ -23,6 +23,8 @@
         </button>
         <mat-menu #menu2="matMenu">
             <span><button mat-menu-item (click)="addRecipe()">Add Recipe</button></span>
+            <span><button mat-menu-item (click)="postedRecipes(user.id)">Posted recipes</button></span>
+
         </mat-menu>
         
     </div>

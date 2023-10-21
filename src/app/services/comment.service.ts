@@ -20,6 +20,10 @@ export class CommentService {
   addComment(dto: AddCommentDto) {
     return this.http.post(`${this.url}/Comments`, dto);
   }
+  deleteComment(id : Number){
+    return this.http.delete(`${this.url}/Comments/${id}`)
+
+  }
 }
 export interface AddCommentDto{
   rating: Number,

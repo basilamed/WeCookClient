@@ -2,8 +2,11 @@
     <img [src]="recipe.image" alt="picture of food" class="recipe">
     <div class="recipe-container">
         <span>
+            <mat-icon class="icon" *ngIf="recipe.chef.id === user.id" (click)="editRecipe(recipe.id)">edit_outline</mat-icon>
             <p>Posted on: {{recipe.postingDate | date: "dd/MM/YYYY"}}</p>
             <p>By: {{recipe.chef.firstName}} {{recipe.chef.lastName}}</p>
+            <span *ngIf="recipe.chef.id === user.id" (click) ='openConfirmationDialog(recipe.id)'><mat-icon class="icon">delete_outline</mat-icon></span>
+
         </span>
         <h1 class="recipe-title">{{ recipe.title }}</h1>
         <span class="info">

@@ -2,10 +2,11 @@
   <form [formGroup]="form">
     <div class="container">
       <div class="text-center">
-        <h2 class="text-theme-primary">Recipe Form</h2>
-        <p>Please enter the recipe information</p>
+        <h2 class="text-theme-primary">Edit Recipe Form</h2>
+        <p>Please change the recipe information you have to</p>
+        <div class="alert alert-danger" *ngIf="error">Something went wrong</div>
+        <div class="alert alert-success" *ngIf="success">You have successfully updated the recipe</div>
       </div> 
-      
       <label for="title"><b>Title</b></label>
       <input formControlName="title" id="title" type="text" placeholder="Enter the recipe title">
       <div *ngIf="Title?.touched && Title?.invalid">
@@ -58,8 +59,7 @@
         <div *ngIf="Taste?.errors?.['required']" class="alert">Taste is required</div>
       </div>
       
-      <button type="submit" [disabled]="!form.valid" (click)="submitRecipe()">Submit Recipe</button>
+      <button type="submit" (click)="updateRecipe()">Edit Recipe</button>
     </div>
   </form>
 </div>
-

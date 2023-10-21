@@ -13,6 +13,9 @@ export class RecipeService {
   getAllRecipes() {
     return this.http.get(`${this.url}/Recipes`);
   }
+  getAllRecipesByUser(id:String) {
+    return this.http.get(`${this.url}/Recipes/chef/${id}`);
+  }
   getRecipe(id : Number) {
     return this.http.get(`${this.url}/Recipes/${id}`);
   }

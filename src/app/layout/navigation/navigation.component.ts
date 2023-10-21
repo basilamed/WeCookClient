@@ -53,5 +53,8 @@ export class NavigationComponent implements OnInit{
   ChangePassword(id: string){
     this.router.navigate([`/changePassword/${id}`])
   }
+  postedRecipes(id : string){
+    this.router.navigate([`/posted-recipes/${id}`])
+  }
 
 }

@@ -1,0 +1,39 @@
+<div class="home">
+     <div class="text">
+         <h1>Recipe collection</h1>
+     </div>
+     <div class="row" >
+        <div class="recipe-collection" *ngIf="recipes.length == 0">
+            <p>Welcome to your recipe collection! Here, you can view and manage all the delicious recipes you've shared with the world.</p>
+            <p>It looks like you haven't posted any recipes yet. Don't worry; there's always a first time to share your culinary creations with the community.</p>
+            <p>Feeling inspired to share your favorite recipes? Click the 'Create New Recipe' button to get started and add your first recipe to your collection.</p>
+            <p>Once you've added your recipes, you'll be able to see them all in this space, making it easy to manage and share your culinary masterpieces with others.</p>
+            <button class="create-recipe-button" (click)="new()">Create New Recipe</button>
+        </div>
+        <div id="units">
+            <div *ngFor="let u of recipes">
+                <div>
+                <mat-card id="unit">
+                    <div class="image-container">
+                        <img [src]="u.image" id="img">
+                        <div class="rectangle"></div>
+                      </div>
+                    <br>
+                    <mat-card-content>
+                        <span>
+                            <p>{{ u.taste ? 'Sweet' : 'Savory' }}</p>
+                            <p>{{ u.postingDate  | date: 'dd/MM/yyyy HH:mm' }}</p>
+                            <p>{{ u.preporationTime }}</p>
+                        </span>
+                        <span class="span-dark">
+                            <mat-icon class="icon" (click)="editRecipe(u.id)">edit_outline</mat-icon>
+                            <h2  (click)="openInfo(u.id)">{{u.title}}</h2>
+                            <mat-icon class="icon" (click)="openConfirmationDialog(u.id)">delete_outline</mat-icon>
+                        </span>
+                    </mat-card-content>
+                </mat-card>
+                </div>
+            </div>
+        </div>
+
+ </div>

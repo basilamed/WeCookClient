@@ -23,7 +23,6 @@ export class AddRecipeComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.userId = (params.get('id') ?? "");
-      console.log(this.userId)
     });}
 
     form = new FormGroup({

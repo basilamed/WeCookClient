@@ -30,6 +30,8 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ChangePasswordComponent } from './forms/change-password/change-password.component';
 import { NewCommentComponent } from './forms/new-comment/new-comment.component';
 import { RecipeCommentsComponent } from './composite/recipe-comments/recipe-comments.component';
+import { PostedRecipesComponent } from './pages/posted-recipes/posted-recipes.component';
+import { EditRecipeComponent } from './forms/edit-recipe/edit-recipe.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { RecipeCommentsComponent } from './composite/recipe-comments/recipe-comm
     ConfirmationComponent,
     ChangePasswordComponent,
     NewCommentComponent,
-    RecipeCommentsComponent
+    RecipeCommentsComponent,
+    PostedRecipesComponent,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule,

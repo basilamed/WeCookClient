@@ -10,7 +10,8 @@ import { UpdateUserComponent } from './forms/update-user/update-user.component';
 import { FavouritesComponent } from './pages/favourites/favourites.component';
 import { ApproveUsersComponent } from './pages/approve-users/approve-users.component';
 import { ChangePasswordComponent } from './forms/change-password/change-password.component';
-
+import { PostedRecipesComponent } from './pages/posted-recipes/posted-recipes.component';
+import { EditRecipeComponent } from './forms/edit-recipe/edit-recipe.component';
 
 const routes: Routes = [
   { path : "", component: WelcomeComponent},
@@ -20,9 +21,9 @@ const routes: Routes = [
   { path : "editUser/:id", component: UpdateUserComponent},
   { path : "changePassword/:id", component: ChangePasswordComponent},
   { path : "recipe/:id", component: SingleRecipeComponent},
+  { path : "edit-recipe/:id", component: EditRecipeComponent},
+  { path : "posted-recipes/:id", component: PostedRecipesComponent},
   
-
-
 ];
 
 @NgModule({

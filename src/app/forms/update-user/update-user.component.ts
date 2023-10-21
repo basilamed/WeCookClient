@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UpdateDto, UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationComponent } from 'src/app/confirmation/confirmation.component';
-
+ 
 @Component({
   selector: 'app-update-user',
   templateUrl: './update-user.component.html',
