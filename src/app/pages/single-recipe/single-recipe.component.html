@@ -2,13 +2,18 @@
     <img [src]="recipe.image" alt="picture of food" class="recipe">
     <div class="recipe-container">
         <span>
-            <mat-icon class="icon" *ngIf="recipe.chef.id === user.id" (click)="editRecipe(recipe.id)">edit_outline</mat-icon>
+            <mat-icon class="icon" *ngIf="recipe?.chef?.id === user?.id" (click)="editRecipe(recipe.id)">edit_outline</mat-icon>
             <p>Posted on: {{recipe.postingDate | date: "dd/MM/YYYY"}}</p>
-            <p>By: {{recipe.chef.firstName}} {{recipe.chef.lastName}}</p>
-            <span *ngIf="recipe.chef.id === user.id" (click) ='openConfirmationDialog(recipe.id)'><mat-icon class="icon">delete_outline</mat-icon></span>
+            <p>By: {{recipe.chef?.firstName}} {{recipe.chef?.lastName}}</p>
+            <span *ngIf="recipe.chef?.id === user.id" (click) ='openConfirmationDialog(recipe.id)'><mat-icon class="icon">delete_outline</mat-icon></span>
 
         </span>
-        <h1 class="recipe-title">{{ recipe.title }}</h1>
+        <span class="title-span">
+            <h1 class="recipe-title">{{ recipe.title }}</h1>
+            <mat-icon *ngIf="userService.isLogedIn() && isRecipeFavorite()" (click)='removeFavorite()'>favorite</mat-icon>
+            <mat-icon *ngIf="userService.isLogedIn() && !isRecipeFavorite()" (click)='addFavorite()'>favorite_border</mat-icon>
+        </span>
+        
         <span class="info">
             <p>Preparation Time: {{ recipe.preporationTime }}</p>
             <p>Taste: {{ recipe.taste ? 'Sweet' : 'Savory' }}</p>
@@ -18,14 +23,14 @@
         <div class="recipe-details">
             <h2>Ingredients:</h2>
             <ul>
-                <li *ngFor="let ingredient of recipe.ingredients.split(','); let i = index">{{ ingredient.trim() }}</li>
+                <li *ngFor="let ingredient of getIngredients(); let i = index">{{ ingredient.trim() }}</li>
             </ul>
             <h2>Instructions:</h2>
             <p>{{ recipe.instructions }}</p>
         </div>
         <div class="comments">
             <app-recipe-comments [recipe]="recipe" [user]="user"></app-recipe-comments>
-            <app-new-comment [recipe]="recipe" [user]="user"></app-new-comment>
+            <app-new-comment [recipe]="recipe" [user]="user" *ngIf="userService.isLogedIn()"></app-new-comment>
         </div>
     </div>
    

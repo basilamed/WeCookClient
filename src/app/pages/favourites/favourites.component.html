@@ -1,1 +1,39 @@
-<p>favourites works!</p>
+<div class="home">
+    <div class="text">
+        <h1>Recipe collection</h1>
+    </div>
+    <div class="row" >
+       <div class="recipe-collection" *ngIf="recipes?.favoriteRecipes?.length == 0">
+            <p>Welcome to your Favorites page!</p>
+            <p>You haven't added any favorites yet.</p>
+            <p>Start by exploring our recipes and click the <mat-icon >favorite_outline</mat-icon> to add your favorites.</p>
+            <p>Adding favorites helps you keep track of the recipes you love. </p>
+            <p>Save recipes you want to revisit quickly in your favorites.</p>
+            <a href="/" >See all recipes</a>
+       </div>
+       <div id="units">
+           <div *ngFor="let u of recipes.favoriteRecipes">
+               <div>
+               <mat-card id="unit">
+                   <div class="image-container">
+                       <img [src]="u.recipe.image" id="img">
+                       <div class="rectangle"></div>
+                     </div>
+                   <br>
+                   <mat-card-content>
+                       <span>
+                           <p>{{ u.recipe.taste ? 'Sweet' : 'Savory' }}</p>
+                           <p>{{ u.recipe.postingDate  | date: 'dd/MM/yyyy HH:mm' }}</p>
+                           <p>{{ u.recipe.preporationTime }}</p>
+                       </span>
+                       <span class="span-dark">
+                        <h2  (click)="openInfo(u.recipe.id)">{{u.recipe.title}}</h2>
+                    </span>
+                   </mat-card-content>
+               </mat-card>
+               </div>
+           </div>
+       </div>
+
+</div>
+

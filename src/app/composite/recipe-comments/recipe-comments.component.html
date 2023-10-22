@@ -1,6 +1,6 @@
 <div class="comments">
   <h2>Comments</h2>
-  <h5 *ngIf="recipe.comments.length == 0">There are no available comments</h5>
+  <h5 *ngIf="recipe?.comments?.length == 0">There are no available comments</h5>
   <div *ngFor="let comment of recipe.comments" class="comment">
       <div class="comment-details">
           <div class="comment-metadata">
@@ -8,7 +8,7 @@
               <span class="comment-date">{{ comment.created | date: 'dd/MM/yyyy HH:mm' }}</span>
               <span>{{ comment.user.firstName }} {{ comment.user.lastName }}</span>
           </div>
-          <span *ngIf="comment.user.id === user.id" (click) ='openConfirmationDialog(comment.id)'><mat-icon class="icon">delete_outline</mat-icon></span>
+          <span *ngIf="comment.user?.id === user.id" (click) ='openConfirmationDialog(comment.id)'><mat-icon class="icon">delete_outline</mat-icon></span>
       </div>
       <p class="comment-description">{{ comment.description }}</p>
   </div>

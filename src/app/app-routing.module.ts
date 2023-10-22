@@ -23,6 +23,7 @@ const routes: Routes = [
   { path : "recipe/:id", component: SingleRecipeComponent},
   { path : "edit-recipe/:id", component: EditRecipeComponent},
   { path : "posted-recipes/:id", component: PostedRecipesComponent},
+  { path : "my-favorites/:id", component: FavouritesComponent},
   
 ];
 

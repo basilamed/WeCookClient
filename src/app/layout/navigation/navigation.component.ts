@@ -56,5 +56,7 @@ export class NavigationComponent implements OnInit{
   postedRecipes(id : string){
     this.router.navigate([`/posted-recipes/${id}`])
   }
-
+  favorites(id : string){
+    this.router.navigate([`/my-favorites/${id}`])
+  }
 }
