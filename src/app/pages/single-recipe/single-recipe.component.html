@@ -10,7 +10,7 @@
         </span>
         <span class="title-span">
             <h1 class="recipe-title">{{ recipe.title }}</h1>
-            <mat-icon *ngIf="userService.isLogedIn() && isRecipeFavorite()" (click)='removeFavorite()'>favorite</mat-icon>
+            <mat-icon *ngIf="userService.isLogedIn() && isRecipeFavorite()" (click)='removeFavorite()' id="favorite">favorite</mat-icon>
             <mat-icon *ngIf="userService.isLogedIn() && !isRecipeFavorite()" (click)='addFavorite()'>favorite_border</mat-icon>
         </span>
         

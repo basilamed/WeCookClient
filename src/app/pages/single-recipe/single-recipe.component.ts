@@ -86,7 +86,10 @@ DeleteComment(id: Number): void {
     }
     console.log(d)
     this.favoriteService.addFavorite(d).subscribe((response) => {
-      window.location.reload();
+      this.userService.getUserById(this.user.id).subscribe(data =>{
+        this.userWithFav = data;
+        console.log(this.userWithFav)
+      })
     });
   
   }
@@ -97,7 +100,10 @@ DeleteComment(id: Number): void {
     }
     console.log(d)
     this.favoriteService.deleteFavorite(d).subscribe((response) => {
-      window.location.reload();
+      this.userService.getUserById(this.user.id).subscribe(data =>{
+        this.userWithFav = data;
+        console.log(this.userWithFav)
+      })
     });
   }
   isRecipeFavorite(): boolean {

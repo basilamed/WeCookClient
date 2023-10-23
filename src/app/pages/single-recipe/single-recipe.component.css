@@ -48,3 +48,6 @@ span{
   .title-span{
     color: black;
   }
+  #favorite{
+    color: red;
+  }
