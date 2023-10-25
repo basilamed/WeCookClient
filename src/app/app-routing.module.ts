@@ -12,6 +12,8 @@ import { ApproveUsersComponent } from './pages/approve-users/approve-users.compo
 import { ChangePasswordComponent } from './forms/change-password/change-password.component';
 import { PostedRecipesComponent } from './pages/posted-recipes/posted-recipes.component';
 import { EditRecipeComponent } from './forms/edit-recipe/edit-recipe.component';
+import { AllUsersComponent } from './pages/all-users/all-users.component';
+import { SingleUserComponent } from './pages/single-user/single-user.component';
 
 const routes: Routes = [
   { path : "", component: WelcomeComponent},
@@ -24,7 +26,10 @@ const routes: Routes = [
   { path : "edit-recipe/:id", component: EditRecipeComponent},
   { path : "posted-recipes/:id", component: PostedRecipesComponent},
   { path : "my-favorites/:id", component: FavouritesComponent},
-  
+  { path : "approve-users", component: ApproveUsersComponent},
+  { path : "all-approved-users", component: AllUsersComponent},
+  { path : "single-user/:id", component: SingleUserComponent},
+
 ];
 
 @NgModule({

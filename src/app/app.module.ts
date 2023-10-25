@@ -32,6 +32,8 @@ import { NewCommentComponent } from './forms/new-comment/new-comment.component';
 import { RecipeCommentsComponent } from './composite/recipe-comments/recipe-comments.component';
 import { PostedRecipesComponent } from './pages/posted-recipes/posted-recipes.component';
 import { EditRecipeComponent } from './forms/edit-recipe/edit-recipe.component';
+import { AllUsersComponent } from './pages/all-users/all-users.component';
+import { SingleUserComponent } from './pages/single-user/single-user.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { EditRecipeComponent } from './forms/edit-recipe/edit-recipe.component';
     NewCommentComponent,
     RecipeCommentsComponent,
     PostedRecipesComponent,
-    EditRecipeComponent
+    EditRecipeComponent,
+    AllUsersComponent,
+    SingleUserComponent
   ],
   imports: [
     BrowserModule,

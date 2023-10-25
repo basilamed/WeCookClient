@@ -5,6 +5,9 @@
                 <li class="nav-item mr-5" *ngIf="!userService.isLogedIn()">
                     <a routerLink="/login" class="nav-link">Sign in</a>
                 </li>
+                <li class="nav-item mr-5" *ngIf="userService.isLogedIn() && userService.isAdmin()">
+                    <a routerLink="/approve-users" class="nav-link">Users to approve</a>
+                </li>
             </ul>
         </div>
         <mat-icon *ngIf="!userService.hasImage() && userService.isLogedIn()" class="white-icon">account_circle</mat-icon>
@@ -25,6 +28,7 @@
             <span><button mat-menu-item (click)="addRecipe()">Add Recipe</button></span>
             <span><button mat-menu-item (click)="postedRecipes(user.id)">Posted recipes</button></span>
             <span><button mat-menu-item (click)="favorites(user.id)">My Favorites</button></span>
+            <span><button mat-menu-item  href="/all-approved-users">All users</button></span>
 
         </mat-menu>
         

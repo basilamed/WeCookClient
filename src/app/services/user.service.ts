@@ -111,6 +111,14 @@ export class UserService {
   verify(email: string, token: string){
     return this.http.get(`${this.url}/Users/verify?userId=${email}&token=${token}`);
   }
+  
+  getPendingUsers(){
+    return this.http.get(`${this.url}/Users/get-all-unapproved-users`);
+  }
+  approveUser(id : string){
+    return this.http.put(`${this.url}/Users/approve-user/${id}`, {});
+
+  }
 
 }
 export interface RegisterDto{
