@@ -89,11 +89,11 @@ export class AddRecipeComponent {
         title: this.Title?.value || '', 
         ingredients: this.Ingredients?.value || '', 
         instructions: this.Instructions?.value || '', 
-        preporationTime: this.PreporationTime?.value || '', 
+        preporationTime: +(this.PreporationTime?.value ?? 0), 
         image: this.imageData || '', 
         chefId: this.userId, 
         taste: this.Taste?.value === 'true',
-        temperature : this.Temperature?.value || ''
+        temperature : +(this.Temperature?.value ?? 0)
       };
   
       this.RecipeService.addRecipe(recipeDto).subscribe(

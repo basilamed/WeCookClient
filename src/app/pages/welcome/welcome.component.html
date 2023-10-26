@@ -4,6 +4,36 @@
          <h1>Check out the newest recipes</h1>
      </div>
      <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="filter-container">
+                <div class="filter-group"> 
+                  <label for="orderBy">Order By Posting Date:</label>
+                  <select id="orderBy" [(ngModel)]="filters.isSortAscending" (change)="onOrderByChange()">
+                    <option value="true">Oldest first</option>
+                    <option value="false">Newest first</option>
+                  </select>
+                </div>
+
+                <div class="filter-group">
+                  <label for="dateOfDonation">Date of donation:</label>
+                  <input type="date" id="dateOfDonation"[(ngModel)]="filters.dateOfPosting">
+                </div>
+              
+                <div class="filter-group">
+                    <label for="floor">Baking Temperature:</label>
+                    <input type="number" id="temperature" placeholder="Baking temperature" [(ngModel)]="filters.temperature">
+                </div>
+                <div class="filter-group">
+                    <label for="floor">Preparation time:</label>
+                    <input type="number" id="preporationTime" placeholder="Preparation time" [(ngModel)]="filters.timeToCook">
+                </div>
+
+                <div class="filter-group">
+                  <button (click)="apply()" id="dugmence">Apply Filters</button>
+                </div>
+              </div>
+        </div>
+      </div>
         <div id="units">
             <div *ngFor="let u of recipes">
                 <div  (click)="openInfo(u.id)">
@@ -16,7 +46,7 @@
                     <mat-card-content>
                         <span>
                             <p>{{ u.taste ? 'Sweet' : 'Savory' }}</p>
-                            <p>{{ u.preporationTime }}</p>
+                            <p>{{ u.preporationTime }} min</p>
                         </span>
                         <h2>{{u.title}}</h2>
                         <hr>
@@ -27,5 +57,13 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12 text-center">
+            <mat-paginator [length]="totalItems"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="[2, 5, 10, 25, 100]"
+              [pageIndex]="currentPage - 1"
+              (page)="onPageChange($event)">
+            </mat-paginator>
+          </div>
 
  </div>

@@ -28,14 +28,14 @@
       <br>
       
       <label for="preparationTime"><b>Preparation Time</b></label>
-      <input formControlName="preporationTime" id="preparationTime" type="text" placeholder="Enter preparation time">
+      <input formControlName="preporationTime" id="preparationTime" type="number" placeholder="Enter preparation time">
       <div *ngIf="PreporationTime?.touched && PreporationTime?.invalid">
         <div *ngIf="PreporationTime?.errors?.['required']" class="alert">Preparation time is required</div>
       </div>
       <br>
 
       <label for="temperature"><b>Temperature</b></label>
-      <input formControlName="temperature" id="temperature" type="text" placeholder="Enter baking temperature, for no bake enter 0">
+      <input formControlName="temperature" id="temperature" type="number" placeholder="Enter baking temperature, for no bake enter 0">
       <div *ngIf="Temperature?.touched && Temperature?.invalid">
         <div *ngIf="Temperature?.errors?.['required']" class="alert">Temperature is required</div>
       </div>
