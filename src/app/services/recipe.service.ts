@@ -52,6 +52,9 @@ export class RecipeService {
     if (filters.timeToCook) {
       params = params.append('TimeToCook', filters.timeToCook.toString());
     }
+    if (filters.ingredients) {
+      params = params.append('Ingredients', filters.ingredients.toString());
+    }
     if (filters.page) {
       params = params.append('Page', filters.page.toString());
     }
@@ -59,7 +62,7 @@ export class RecipeService {
     if (filters.pageSize) {
       params = params.append('PageSize', filters.pageSize.toString());
     }
-  
+    console.log(`${this.url}/Recipes`, { params: params });
     return this.http.get(`${this.url}/Recipes`, { params: params });
 
 }}

@@ -82,6 +82,7 @@ h5{
 
 input[type="date"],
 input[type="number"],
+input[type="text"],
 select {
   border: none;
   border-bottom: 2px solid #0f283c;
@@ -90,9 +91,24 @@ select {
   width: 200px;
   color: #0f283c;
 }
+#ing{
+  width: 200px;
+  color: #ef4229;;
+  font-size: 12px;
+}
 
 input[type="date"]::placeholder,
 input[type="number"]::placeholder,
+input[type="text"]::placeholder,
 select {
   color: #c3c3c3;
 }
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 20px;
+}
+

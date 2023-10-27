@@ -15,6 +15,7 @@ export class WelcomeComponent {
   currentPage: number = 1;
   pageSize: number = 2; 
   totalItems!: number;
+  isLoading = false;
 
   constructor(
     private router: Router,
@@ -35,6 +36,7 @@ export class WelcomeComponent {
     //   this.recipes = data;
     //   console.log(this.recipes)
     // })
+    this.isLoading = true;
     this.filters.pageSize = 2;
     this.loadDonations();
   }
@@ -44,30 +46,31 @@ export class WelcomeComponent {
   loadDonations() {
     this.filters.page = this.currentPage; 
     this.filters.pageSize = this.pageSize;
+    this.isLoading = true;
 
     this.RecipeService.getFilteredDonations(this.filters).subscribe((res: any) => {
       this.recipes = res.items;
       this.totalItems = res.totalItems;
+      this.isLoading = false;
     }, err => {
       console.log(err);
     });
   }
   onOrderByChange() {
-    this.filters.sortBy = 'DonationAmount';
+    this.isLoading = true;
+    this.filters.sortBy = 'PostingDate';
     this.loadDonations();
   }
   apply() {
     if (this.filters.dateOfPosting) {
       const periodOfDate = new Date(this.filters.dateOfPosting);
       this.filters.dateOfPosting = `${periodOfDate.getMonth() + 1}-${periodOfDate.getDate()}-${periodOfDate.getFullYear()}`;
-      
     }
-  
+    this.isLoading = true;
     this.loadDonations();
   }
 
   onPageChange(event: PageEvent) {
-    console.log(event);
     this.filters.page = event.pageIndex;
     this.pageSize = event.pageSize;
     this.currentPage = event.pageIndex + 1;
