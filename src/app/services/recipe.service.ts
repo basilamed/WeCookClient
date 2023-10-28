@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { env } from '../env';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
+  static getAllRecipesByUser(id: string) {
+    throw new Error('Method not implemented.');
+  }
   url = env.url;
 
   constructor(private http: HttpClient) { }
@@ -13,7 +17,7 @@ export class RecipeService {
   getAllRecipes() {
     return this.http.get(`${this.url}/Recipes`);
   }
-  getAllRecipesByUser(id:String) {
+  getAllRecipesByUser(id:String) : Observable<any> {
     return this.http.get(`${this.url}/Recipes/chef/${id}`);
   }
   getRecipe(id : Number) {

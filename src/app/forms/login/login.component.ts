@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -17,16 +18,13 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService: UserService, @Inject(Router) private router: Router, private route: ActivatedRoute) { }
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      const success = params['success'];
-      if (success === 'true') {
-        this.success = true;
-      }
-      const success2 = params['success2'];
-      if (success2 === 'true') {
-        this.success2 = true;
-      }
-    });
+    this.route.queryParams.pipe(
+      switchMap((params) => {
+        this.success = params['success'] === 'true';
+        this.success2 = params['success2'] === 'true';
+        return this.route.paramMap;
+      })
+    );
   }
 
   form = new FormGroup({
@@ -56,12 +54,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', JSON.stringify(response.user));
         this.userService.setCurrentUser(response.user);
-        if(response.user.roleId === 4){
-          this.router.navigate(['admin']);
-        }
-        else{
           this.router.navigate(['']);
-        }
       }
       this.loading = false;
     },
