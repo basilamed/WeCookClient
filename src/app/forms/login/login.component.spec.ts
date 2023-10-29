@@ -38,4 +38,45 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should have a form with 2 controls', () => {
+    expect(component.form.contains('email')).toBeTruthy();
+    expect(component.form.contains('password')).toBeTruthy();
+  });
+  
+  it('should make the email control required', () => {
+    let control = component.form.get('email');
+    control?.setValue('');
+    expect(control?.valid).toBeFalsy();
+  });
+
+  it('should make the password control required', () => {
+    let control = component.form.get('password');
+    control?.setValue('');
+    expect(control?.valid).toBeFalsy();
+  });
+
+
+  it('should login', () => {
+    let credentials = {
+      userName: ' ',  
+      password: ' '
+    };
+    component.login();
+    expect(component.loading).toBeTruthy();
+  }
+  );
+
+
+
+
+
+
+
+
+
+  
+
+
+
 });

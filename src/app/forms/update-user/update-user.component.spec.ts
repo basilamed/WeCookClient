@@ -43,4 +43,17 @@ describe('UpdateUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it( 'should have a form with 3 controls', () => {
+    expect(component.form.contains('name')).toBeTruthy();
+    expect(component.form.contains('surname')).toBeTruthy();
+    expect(component.form.contains('image')).toBeTruthy();
+  }
+  );
+  it('should updateUser', () => { 
+    let userService = TestBed.inject(UserService);
+    let spy = spyOn(userService, 'updateUser').and.callThrough();
+    component.updateUser();
+    expect(spy).toHaveBeenCalled();
+  }
+  );
 });

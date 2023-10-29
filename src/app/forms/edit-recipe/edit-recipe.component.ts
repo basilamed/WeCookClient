@@ -11,7 +11,7 @@ import { RecipeService, UpdateRecipeDto } from 'src/app/services/recipe.service'
   templateUrl: './edit-recipe.component.html',
   styleUrls: ['./edit-recipe.component.css']
 })
-export class EditRecipeComponent {
+export class EditRecipeComponent implements OnInit{
   id : Number = 0
   recipe : any = {}
   imageData =''

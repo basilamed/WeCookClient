@@ -41,4 +41,23 @@ describe('AddRecipeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it ('should have a form with 7 controls', () => {
+    expect(component.form.contains('title')).toBeTruthy();
+    expect(component.form.contains('ingredients')).toBeTruthy();
+    expect(component.form.contains('instructions')).toBeTruthy();
+    expect(component.form.contains('preporationTime')).toBeTruthy();
+    expect(component.form.contains('image')).toBeTruthy();
+    expect(component.form.contains('taste')).toBeTruthy();
+    expect(component.form.contains('temperature')).toBeTruthy();
+  }
+  );
+  it('should submitRecipe', () => { 
+    let recipeService = TestBed.inject(RecipeService);
+    let spy = spyOn(recipeService, 'addRecipe').and.callThrough();
+    component.submitRecipe();
+    expect(spy).toHaveBeenCalled();
+  }
+  );
+
 });

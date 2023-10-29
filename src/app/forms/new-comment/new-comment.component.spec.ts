@@ -41,4 +41,11 @@ describe('NewCommentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should addComment', () => {
+    let commentService = TestBed.inject(CommentService);
+    let spy = spyOn(commentService, 'addComment').and.callThrough();
+    component.SubmitComment();
+    expect(spy).toHaveBeenCalled();
+  }
+  );
 });

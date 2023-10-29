@@ -23,43 +23,92 @@ describe('RecipeService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-  // it('should test getAllRecipesByUser', () => {
-  //   const response = [
-  //     {
-  //        id : "jjhnasknvknadsockjnca",
-  //        title : "Recipe 1",
-  //        ingredients : "jaja,2 kasike praska za pecivo",
-  //        instructions : "zbutas sve",
-  //        preporationTime : "20",
-  //        taste : "true",
-  //        temperature : "200",
-  //        image : "vdkjabevjhbekjvnlwcnkjlnwdcijlnwc",
-  //        postingDate : "10/28/2023 15:45:30",
-  //        chefId : "jhnasknvknadsockjnca",
-  //     },
-  //     {
-  //       id : "jjhnasknvknadsockjnca",
-  //        title : "Recipe 3",
-  //        ingredients : "3 jaja,2 kasike praska za pecivo",
-  //        instructions : "zbutas sve",
-  //        preporationTime : "20",
-  //        taste : "true",
-  //        temperature : "200",
-  //        image : "vdkjabevjhbekjvnlwcnkjlnwdcijlnwc",
-  //        postingDate : "10/28/2023 15:45:30",
-  //        chefId : "jhnasknvknadsockjnca",
-  //     }
-  //   ];
+  
+  it('should test getRecipe', () => {
+    const response = {
+      id : "jjhnasknvknadsockjnca",
+      title : "Recipe 1",
+      ingredients : "jaja,2 kasike praska za pecivo",
+      instructions : "zbutas sve",
+      preporationTime : "20",
+      taste : "true",
+      temperature : "200",
+      image : "vdkjabevjhbekjvnlwcnkjlnwdcijlnwc",
+      postingDate : "10/28/2023 15:45:30",
+      chefId : "jhnasknvknadsockjnca",
+    };
 
-  //   service.getAllRecipesByUser(id).subscribe((res) => {
-  //     expect(res).toEqual(response);
-  //   });
+    service.getRecipe(1).subscribe((res) => {
+      expect(res).toEqual(response);
+    });
 
-  //    const req = httpController.expectOne({
-  //      method: 'GET',
-  //      url: `${url}/Recipes/chef/${id}`,
-  //    });
+    const req = httpController.expectOne(`${url.url}/Recipes/1`);
+    expect(req.request.method).toBe('GET');
+  }
+  );
+  it('should test getAllRecipes', () => {
+    const response = [
+      {
+        id : "jjhnasknvknadsockjnca",
+        title : "Recipe 1",
+        ingredients : "jaja,2 kasike praska za pecivo",
+        instructions : "zbutas sve",
+        preporationTime : "20",
+        taste : "true",
+        temperature : "200",
+        image : "vdkjabevjhbekjvnlwcnkjlnwdcijlnwc",
+        postingDate : "10/28/2023 15:45:30",
+        chefId : "jhnasknvknadsockjnca",
+      },
+      {
+        id : "jjhnasknvknadsockjnca",
+        title : "Recipe 1",
+        ingredients : "jaja,2 kasike praska za pecivo",
+        instructions : "zbutas sve",
+        preporationTime : "20",
+        taste : "true",
+        temperature : "200",
+        image : "vdkjabevjhbekjvnlwcnkjlnwdcijlnwc",
+        postingDate : "10/28/2023 15:45:30",
+        chefId : "jhnasknvknadsockjnca",
+      }
+    ];
 
-  //   req.flush(response);
-  // });
+    service.getAllRecipes().subscribe((res) => {
+      expect(res).toEqual(response);
+    });
+
+    const req = httpController.expectOne(`${url.url}/Recipes`);
+    expect(req.request.method).toBe('GET');
+  }
+  );
+  it ( 'should test addRecipe', () => {
+    const response = {
+      title : "Recipe 1",
+      ingredients : "jaja,2 kasike praska za pecivo",
+      instructions : "zbutas sve",
+      preporationTime : 20,
+      taste : true,
+      temperature : 200,
+      image : "vdkjabevjhbekjvnlwcnkjlnwdcijlnwc",
+      chefId : "jhnasknvknadsockjnca",
+    };
+
+    service.addRecipe(response).subscribe((res) => {
+      expect(res).toEqual(response);
+    });
+
+    const req = httpController.expectOne(`${url.url}/Recipes`);
+    expect(req.request.method).toBe('POST');
+  }
+  );
+  it('should test deleteRecipe', () => {
+    service.deleteRecipe(1).subscribe((res) => {
+      expect(res).toEqual({});
+    });
+
+    const req = httpController.expectOne(`${url.url}/Recipes/1`);
+    expect(req.request.method).toBe('DELETE');
+  }
+  );
 });
