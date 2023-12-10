@@ -24,7 +24,7 @@
                        <span>
                            <p>{{ u.recipe.taste ? 'Sweet' : 'Savory' }}</p>
                            <p>{{ u.recipe.postingDate  | date: 'dd/MM/yyyy HH:mm' }}</p>
-                           <p>{{ u.recipe.preporationTime }}</p>
+                           <p>{{ u.recipe.preporationTime }} min</p>
                        </span>
                        <span class="span-dark">
                         <h2  (click)="openInfo(u.recipe.id)">{{u.recipe.title}}</h2>
