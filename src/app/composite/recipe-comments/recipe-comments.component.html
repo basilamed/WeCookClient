@@ -8,7 +8,7 @@
               <span class="comment-date">{{ comment.created | date: 'dd/MM/yyyy HH:mm' }}</span>
               <span>{{ comment.user.firstName }} {{ comment.user.lastName }}</span>
           </div>
-          <span *ngIf="comment.user?.id === user.id" (click) ='openConfirmationDialog(comment.id)'><mat-icon class="icon">delete_outline</mat-icon></span>
+          <span *ngIf="comment.user?.id === user.id" (click) ='openConfirmationDialog(comment.id)' id="deleteComment"><mat-icon class="icon">delete_outline</mat-icon></span>
       </div>
       <p class="comment-description">{{ comment.description }}</p>
   </div>

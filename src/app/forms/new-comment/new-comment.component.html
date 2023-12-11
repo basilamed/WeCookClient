@@ -19,7 +19,7 @@
             <div *ngIf="Description?.errors?.['max']" class="alert ">Description cannot exceed 150 characters</div>
         </div>
       </div>
-      <button type="submit" (click)="openConfirmationDialog()" [disabled]="form.invalid">Submit Comment</button>
+      <button type="submit" (click)="openConfirmationDialog()" [disabled]="form.invalid" id="submitComment">Submit Comment</button>
     </form>
   </div>
   

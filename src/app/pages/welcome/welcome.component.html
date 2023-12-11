@@ -44,8 +44,8 @@
       </div>
         <div id="units">
             <div *ngFor="let u of recipes">
-                <div  (click)="openInfo(u.id)">
-                <mat-card id="unit">
+                <div  (click)="openInfo(u.id)" id="unit">
+                <mat-card>
                     <div class="image-container">
                         <img [src]="u.image" id="img">
                         <div class="rectangle"></div>
