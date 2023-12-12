@@ -11,8 +11,7 @@
             </ul>
         </div>
         <mat-icon *ngIf="!userService.hasImage() && userService.isLogedIn()" class="white-icon">account_circle</mat-icon>
-        <!-- FIXME dodadti zastitu po userima -->
-          
+        
         <img *ngIf="userService.hasImage()" class="profile-image" [src]="user.image" alt="">
         
         <button *ngIf="userService.isLogedIn()" mat-button [matMenuTriggerFor]="menu" class="menu" id="ime" >{{user.firstName}} {{user.lastName}}</button>
@@ -25,10 +24,10 @@
             <mat-icon class="white-icon">restaurant_menu</mat-icon>
         </button>
         <mat-menu #menu2="matMenu">
-            <span><button mat-menu-item (click)="addRecipe()">Add Recipe</button></span>
-            <span><button mat-menu-item (click)="postedRecipes(user.id)">Posted recipes</button></span>
+            <span><button mat-menu-item (click)="addRecipe()" *ngIf="userService.isChef() || userService.isAdmin()">Add Recipe</button></span>
+            <span><button mat-menu-item (click)="postedRecipes(user.id)" *ngIf="userService.isChef() || userService.isAdmin()">Posted recipes</button></span>
             <span><button mat-menu-item (click)="favorites(user.id)">My Favorites</button></span>
-            <span><button mat-menu-item (click)="allUsers()">All users</button></span>
+            <span><button mat-menu-item (click)="allUsers()" *ngIf="userService.isAdmin()">All users</button></span>
             <span><button mat-menu-item (click)="requestChef(user.id)" *ngIf="userService.isRegularUser()">Request chef status</button></span>
         </mat-menu>
         

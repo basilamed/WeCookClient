@@ -3,15 +3,13 @@
         <div class="row"> 
             <div class="col-md-12 text-center">
                 <h1>Users</h1>
-                <!-- FIXME -->
-                <p id="p">ISPRAVITI OVO</p>
+                <p id="p">Regular users have a orange border while chefs have a pink border.</p>
             </div>
         </div>
         <br>
         <div class="row justify-content-center" id="users">
             <div class="col-lg-5"  *ngFor="let u of users">
                 <div (click)="openInfo(u.id)" [ngClass]="{
-                    'special-user-1': u.roleId === 4,
                     'special-user-2': u.roleId === 2,
                     'special-user-3': u.roleId === 3
                   }">
