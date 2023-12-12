@@ -35,6 +35,7 @@ import { PostedRecipesComponent } from './pages/posted-recipes/posted-recipes.co
 import { EditRecipeComponent } from './forms/edit-recipe/edit-recipe.component';
 import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { SingleUserComponent } from './pages/single-user/single-user.component';
+import { RequestComponent } from './pages/request/request.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { SingleUserComponent } from './pages/single-user/single-user.component';
     PostedRecipesComponent,
     EditRecipeComponent,
     AllUsersComponent,
-    SingleUserComponent
+    SingleUserComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,

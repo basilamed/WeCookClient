@@ -59,4 +59,10 @@ export class NavigationComponent implements OnInit{
   favorites(id : string){
     this.router.navigate([`/my-favorites/${id}`])
   }
+  requestChef(id : string){
+    this.router.navigate([`/request/${id}`])
+  }
+  allUsers(){
+    this.router.navigate([`/all-approved-users`])
+  }
 }

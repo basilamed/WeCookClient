@@ -11,7 +11,7 @@
             </ul>
         </div>
         <mat-icon *ngIf="!userService.hasImage() && userService.isLogedIn()" class="white-icon">account_circle</mat-icon>
-        
+        <!-- FIXME dodadti zastitu po userima -->
           
         <img *ngIf="userService.hasImage()" class="profile-image" [src]="user.image" alt="">
         
@@ -28,8 +28,8 @@
             <span><button mat-menu-item (click)="addRecipe()">Add Recipe</button></span>
             <span><button mat-menu-item (click)="postedRecipes(user.id)">Posted recipes</button></span>
             <span><button mat-menu-item (click)="favorites(user.id)">My Favorites</button></span>
-            <span><button mat-menu-item  href="/all-approved-users">All users</button></span>
-
+            <span><button mat-menu-item (click)="allUsers()">All users</button></span>
+            <span><button mat-menu-item (click)="requestChef(user.id)" *ngIf="userService.isRegularUser()">Request chef status</button></span>
         </mat-menu>
         
     </div>

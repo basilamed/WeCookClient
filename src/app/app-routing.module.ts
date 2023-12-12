@@ -14,6 +14,7 @@ import { PostedRecipesComponent } from './pages/posted-recipes/posted-recipes.co
 import { EditRecipeComponent } from './forms/edit-recipe/edit-recipe.component';
 import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { SingleUserComponent } from './pages/single-user/single-user.component';
+import { RequestComponent } from './pages/request/request.component';
 
 const routes: Routes = [
   { path : "", component: WelcomeComponent},
@@ -29,6 +30,8 @@ const routes: Routes = [
   { path : "approve-users", component: ApproveUsersComponent},
   { path : "all-approved-users", component: AllUsersComponent},
   { path : "single-user/:id", component: SingleUserComponent},
+  { path : "request/:id", component: RequestComponent},
+  { path : "main", component: MainComponent}
 
 ];
 

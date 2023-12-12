@@ -1,0 +1,29 @@
+
+<div *ngIf="user.requestedToBeChef === false" class="text">
+    <div>
+        <h1>Your current status is: Regular User</h1>
+    </div>
+    <div class="status-description">
+        <h1>Description</h1>
+        <p>When you request to become a chef, you will gain additional privileges related to cooking and recipes on this platform.</p>
+    </div>
+
+    <div class="status-warning">
+        <h1>Warning</h1>
+        <p>Keep in mind that becoming a chef may result in increased visibility, and other users may approach you for culinary advice or collaboration.</p>
+    </div>
+
+    <button (click)="openConfirmationDialog()">Request Chef Status</button>
+</div>
+
+<div *ngIf="user.requestedToBeChef === true" class="text">
+    <div>
+        <h1>Your request status: Pending</h1>
+    </div>
+    <div class="status-description">
+        <h1>Description</h1>
+        <p>Your request to become a chef is currently pending approval. Please wait for confirmation from the platform administrators.</p>
+    </div>
+
+    <button (click)="openConfirmationDialog()">Cancel Request</button>
+</div>

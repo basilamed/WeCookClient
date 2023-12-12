@@ -117,7 +117,18 @@ export class UserService {
   }
   approveUser(id : string){
     return this.http.put(`${this.url}/Users/approve-user/${id}`, {});
-
+  }
+  getAllChefRequests(){
+    return this.http.get(`${this.url}/Users/get-all-chef-requests`);
+  }
+  approveChef(id : string){
+    return this.http.get(`${this.url}/Users/approve-chef-request/${id}`, {});
+  }
+  disapproveChef(id : string){
+    return this.http.get(`${this.url}/Users/disapprove-chef-request/${id}`, {});
+  } 
+  requestChef(id : string){
+    return this.http.get(`${this.url}/Users/request-chef/${id}`, {});
   }
 
 }
