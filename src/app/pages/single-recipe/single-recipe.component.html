@@ -5,6 +5,8 @@
             <mat-icon class="icon" *ngIf="recipe?.chef?.id === user?.id" (click)="editRecipe(recipe.id)">edit_outline</mat-icon>
             <p>Posted on: {{recipe.postingDate | date: "dd/MM/YYYY"}}</p>
             <p>By: {{recipe.chef?.firstName}} {{recipe.chef?.lastName}}</p>
+            <p *ngIf="rating > 0">Rating : {{this.rating}}</p>
+            <p *ngIf="rating == 0">Not rated yet</p>
             <span *ngIf="recipe.chef?.id === user.id" (click) ='openConfirmationDialog(recipe.id)'><mat-icon class="icon">delete_outline</mat-icon></span>
 
         </span>

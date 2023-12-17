@@ -14,14 +14,14 @@
       <br>
       
       <label for="ingredients"><b>Ingredients</b></label>
-      <input formControlName="ingredients" id="ingredients" type="text" placeholder="Enter the ingredients with commas inbetween">
+      <textarea formControlName="ingredients" id="ingredients" type="text" placeholder="Enter the ingredients with commas inbetween"></textarea>
       <div *ngIf="Ingredients?.touched && Ingredients?.invalid">
         <div *ngIf="Ingredients?.errors?.['required']" class="alert">Ingredients are required</div>
       </div>
       <br>
       
       <label for="instructions"><b>Instructions</b></label>
-      <input formControlName="instructions" id="instructions" type="text" placeholder="Enter the instructions">
+      <textarea formControlName="instructions" id="instructions" type="text" placeholder="Enter the instructions"></textarea>
       <div *ngIf="Instructions?.touched && Instructions?.invalid">
         <div *ngIf="Instructions?.errors?.['required']" class="alert">Instructions are required</div>
       </div>

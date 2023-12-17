@@ -40,7 +40,7 @@ export class NewCommentComponent {
       const result = await dialogRef.afterClosed().toPromise();
       if (result) {
         await this.SubmitComment();
-        this.Router.navigate([`/recipe/${this.recipe.id}`]);
+        //this.Router.navigate([`/recipe/${this.recipe.id}`]);
       }
     } catch (error) {
       console.log(error);
@@ -58,7 +58,7 @@ export class NewCommentComponent {
         };
         console.log(d);
         await this.commentService.addComment(d).toPromise();
-        this.Router.navigate([`/`]);
+        //this.Router.navigate([`/`]);
       }
       catch (error) {
       console.log(error);

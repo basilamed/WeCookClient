@@ -20,6 +20,7 @@ export class SingleRecipeComponent {
   favorite: boolean = false
   userId = ''
   userWithFav : any =[]
+  rating: any = 0;
 
   constructor(private router: ActivatedRoute,
       public userService : UserService,
@@ -43,6 +44,11 @@ export class SingleRecipeComponent {
           console.log(err)
           })
       
+    })
+
+    this.recipeService.getRating(this.id).subscribe(data => {
+      this.rating = data;
+      console.log(this.rating)
     })
 
     const userJSON = localStorage.getItem('user');

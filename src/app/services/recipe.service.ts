@@ -20,6 +20,9 @@ export class RecipeService {
   getAllRecipesByUser(id:String) : Observable<any> {
     return this.http.get(`${this.url}/Recipes/chef/${id}`);
   }
+  getRating(id : Number) {
+    return this.http.get(`${this.url}/Recipes/rating/${id}`);
+  }
   getRecipe(id : Number) {
     return this.http.get(`${this.url}/Recipes/${id}`);
   }

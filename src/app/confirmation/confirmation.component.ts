@@ -16,7 +16,12 @@ export class ConfirmationComponent {
 
   onConfirm(): void {
     this.dialogRef.close(true);
-    this.location.back();
+    //this.location.back();
+    //refresh page after 1 second
+    setTimeout(function () {
+      window.location.reload();
+    }, 500);
+    //window.location.reload();
   }
 
   onCancel(): void {
