@@ -25,33 +25,25 @@ export class NavigationComponent implements OnInit{
       this.userService.setCurrentUser(this.user);
       this.currentUserSubject.next(this.user);
       this.id = this.user.id;
-      console.log('User from local storage:', this.user);
 
       this.userService.getUserById(this.id).subscribe((res: any) => {
         this.currentUser = res;
-        console.log('User from getUserById:', res);
-        console.log('Current user:', this.currentUser);
-
         this.user = this.currentUser;
         this.userService.setCurrentUser(this.user);
         this.currentUserSubject.next(this.user);
-
         localStorage.setItem('user', JSON.stringify(this.user));
 
         this.cdr.detectChanges();
       });
     }
 
-    // Subscribe to changes in the user data
     this.currentUserSubscription = this.userService
       .getCurrentUser()
       .subscribe((user) => {
         this.user = user;
-        console.log('User from subscription:', this.user);
         this.cdr.detectChanges();
       });
   }
-
 
   logout(){
     this.userService.logout();

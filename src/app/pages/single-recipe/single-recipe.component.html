@@ -12,8 +12,8 @@
         </span>
         <span class="title-span">
             <h1 class="recipe-title">{{ recipe.title }}</h1>
-            <mat-icon *ngIf="userService.isLogedIn() && isRecipeFavorite()" (click)='removeFavorite()' id="favorite">favorite</mat-icon>
-            <mat-icon *ngIf="userService.isLogedIn() && !isRecipeFavorite()" (click)='addFavorite()'>favorite_border</mat-icon>
+            <div id="favorite"><mat-icon *ngIf="userService.isLogedIn() && isRecipeFavorite()" (click)='removeFavorite()' >favorite</mat-icon></div>
+            <div id="remove_favorite"><mat-icon *ngIf="userService.isLogedIn() && !isRecipeFavorite()" (click)='addFavorite()'>favorite_border</mat-icon></div>
         </span>
         
         <span class="info">
